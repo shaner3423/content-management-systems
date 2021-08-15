@@ -59,7 +59,7 @@ function runPrompts() {
         //call the functions based off of the users selection
         switch (choice) {
             case 'VIEW_DEPARTMENTS':
-                viewAllDeparments();
+                viewAllDepartments();
                 break;
             case 'VIEW_ROLES':
                 viewAllRoles();
@@ -85,4 +85,70 @@ function runPrompts() {
     })
 }
 
-//View all employees
+//View all employees function
+function viewAllEmployees() {
+    db.allEmployees()
+    .then(([rows]) => {
+        let employees = rows;
+        console.log('\n');
+        console.table(employees);
+    })
+    .then(() => runPrompts());
+}
+
+//view all roles function
+function viewAllRoles() {
+    db.allRoles()
+    .then(([roles]) => {
+        let roles = rows;
+        console.log('\n');
+    })
+    .then(() => runPrompts());
+}
+
+//view all departments function
+function viewAllDepartments () {
+    db.allDepartments()
+    .then(([rows]) => {
+        let departments = rows;
+        console.log('\n');
+        consol.table(departments);
+    })
+    .then (() => runPrompts());
+}
+
+//Add roles
+function createRole() {
+    db.allDepartments()
+    .then(([ rows]) => {
+        let departments = rows;
+        const departmentChoices = departments.map(({ id, name}) => ({
+            name: name,
+            value: id 
+        }));
+
+        prompt([
+            {
+                name: 'title',
+                message: 'What is the role?'
+            },
+            {
+                name: 'salary',
+                message: 'What is the salary rate?'
+            },
+            {
+                type: 'list',
+                name: 'department_id',
+                message: 'Which department does the role fall under?',
+                choices: departmentChioces 
+            }
+        ])
+        .then(role => {
+            db.addRole(role)
+            .then(() => consol.log(`Added ${role.title} to the database`))
+            .then(() => runPrompts())
+        })
+    })
+}
+
+//
