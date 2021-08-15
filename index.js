@@ -58,7 +58,31 @@ function runPrompts() {
         let choice = res.choice;
         //call the functions based off of the users selection
         switch (choice) {
-            
+            case 'VIEW_DEPARTMENTS':
+                viewAllDeparments();
+                break;
+            case 'VIEW_ROLES':
+                viewAllRoles();
+                break;
+            case 'VIEW_EMPLOYEES':
+                viewAllEmployees();
+                break;
+            case 'ADD_DEPARTMENT':
+                createDepartment();
+                break;
+            case 'ADD_ROLE':
+                createRole();
+                break;
+            case 'ADD_EMPLOYEE':
+                createEmployee();
+                break;
+            case 'UPDATE_EMPLOYEE_ROLE':
+                updateEmployeeROle();
+                break;
+            default:
+                quit();
         }
     })
 }
+
+//View all employees
