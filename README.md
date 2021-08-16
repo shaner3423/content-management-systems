@@ -7,8 +7,6 @@ Module #12 Challenege. A command-line application to manage a company's employee
 ## GitHub:
 https://github.com/shaner3423/employee-tracker
 
-## Walkthrough video:
-
 ## User Story
 ```
 - AS A business owner
@@ -26,9 +24,6 @@ https://github.com/shaner3423/employee-tracker
 - Application will allow user to add an amployee.
 - Application will allow user to update an employee role.
 ```
-
-## Screenshots
-
 
 ## Technologies Use
 
