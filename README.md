@@ -41,6 +41,9 @@ https://github.com/shaner3423/employee-tracker
 
 ## Credits:
 
+Dana Bottini: https://github.com/dbottoni
+Spencer Berkebile: https://github.com/SBerkebile7
+
 
 ## Contributor:
 
